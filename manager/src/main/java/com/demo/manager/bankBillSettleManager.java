@@ -2,8 +2,8 @@ package com.demo.manager;
 
 import com.demo.common.PageModel;
 import com.demo.common.PageQuery;
+import com.demo.common.RemoteResult;
 import com.demo.domain.BankSettleBillFlow;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Map;
 
@@ -13,5 +13,7 @@ import java.util.Map;
 public interface bankBillSettleManager {
     public BankSettleBillFlow getBank1(Integer id);
     public PageModel<BankSettleBillFlow> getBank2(PageQuery pageQuery,Map map);
+
+    public RemoteResult<Boolean> insertTransaction(BankSettleBillFlow bankSettleBillFlow) throws Exception;
 
 }
