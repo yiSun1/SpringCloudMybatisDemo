@@ -7,7 +7,6 @@ import com.demo.dao.BankSettleBillFlowMapper;
 import com.demo.domain.BankSettleBillFlow;
 import com.demo.manager.bankBillSettleManager;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.annotation.ManagedBean;
 import java.util.Map;
@@ -16,7 +15,6 @@ import java.util.Map;
  * Created by zhangxs7 on 2017/6/22.
  */
 @ManagedBean
-@EnableTransactionManagement
 public class bankBillSettleManagerImpl implements bankBillSettleManager {
 
     @Autowired
@@ -33,14 +31,15 @@ public class bankBillSettleManagerImpl implements bankBillSettleManager {
     }
 
     @Override
-    public RemoteResult<Boolean> insertTransaction(BankSettleBillFlow bankSettleBillFlow) throws Exception {
+    public RemoteResult<Boolean> insertTransaction(BankSettleBillFlow bankSettleBillFlow){
         RemoteResult<Boolean> result=new RemoteResult<Boolean>(false);
-        BankSettleBillFlow bb=bankSettleBillFlowMapper.selectByPrimaryKey(29);
+        BankSettleBillFlow bb=bankSettleBillFlowMapper.selectByPrimaryKey(31);
         bb.setId(29);
         int re=bankSettleBillFlowMapper.insertSelective(bb);
         if(re>0){
             result.setSuccess(true);
-                throw new Exception("测试事务！");
+           String tt=null;
+            tt.trim();
         }
         return result;
     }

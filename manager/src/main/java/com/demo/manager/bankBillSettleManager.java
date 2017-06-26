@@ -14,6 +14,6 @@ public interface bankBillSettleManager {
     public BankSettleBillFlow getBank1(Integer id);
     public PageModel<BankSettleBillFlow> getBank2(PageQuery pageQuery,Map map);
 
-    public RemoteResult<Boolean> insertTransaction(BankSettleBillFlow bankSettleBillFlow) throws Exception;
+    public RemoteResult<Boolean> insertTransaction(BankSettleBillFlow bankSettleBillFlow);
 
 }
