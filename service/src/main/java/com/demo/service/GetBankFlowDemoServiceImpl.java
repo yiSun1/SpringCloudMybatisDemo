@@ -6,10 +6,7 @@ import com.demo.common.RemoteResult;
 import com.demo.domain.BankSettleBillFlow;
 import com.demo.manager.impl.bankBillSettleManagerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,21 +14,17 @@ import java.util.Map;
 /**
  * Created by zhangxs7 on 2017/6/22.
  */
-@RestController
-@RequestMapping({"/home"})
-public class getBankFlowDemo {
+@Service
+public class GetBankFlowDemoServiceImpl implements GetBankFlowDemoService {
+
    @Autowired
    bankBillSettleManagerImpl bankBillSettleManagerImpl;
 
-   @RequestMapping(value = "/all")
-   @ResponseBody
    public String user(){
         BankSettleBillFlow flow = bankBillSettleManagerImpl.getBank1(31);
         return flow.toString();
    }
 
-    @RequestMapping(value = "/all2")
-    @ResponseBody
     public String user2(){
         PageQuery pageQuery=new PageQuery(1,100);
         Map map=new HashMap();
@@ -42,9 +35,6 @@ public class getBankFlowDemo {
         return flow.toString();
     }
 
-    @RequestMapping(value = "/transactionTest")
-    @ResponseBody
-    @Transactional  //所有需添加事务的地方均需要配置该参数 注意该事务 只能在control 层使用！！！
     public String transactionTest(){
         BankSettleBillFlow bankSettleBillFlow=new BankSettleBillFlow();
         bankSettleBillFlow.setId(31);
