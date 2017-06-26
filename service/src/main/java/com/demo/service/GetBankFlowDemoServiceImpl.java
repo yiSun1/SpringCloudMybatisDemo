@@ -1,5 +1,6 @@
 package com.demo.service;
 
+import com.demo.api.GetBankFlowDemoServiceApi;
 import com.demo.common.PageModel;
 import com.demo.common.PageQuery;
 import com.demo.common.RemoteResult;
@@ -15,16 +16,18 @@ import java.util.Map;
  * Created by zhangxs7 on 2017/6/22.
  */
 @Service
-public class GetBankFlowDemoServiceImpl implements GetBankFlowDemoService {
+public class GetBankFlowDemoServiceImpl implements GetBankFlowDemoServiceApi {
 
    @Autowired
    bankBillSettleManagerImpl bankBillSettleManagerImpl;
 
+    @Override
    public String user(){
         BankSettleBillFlow flow = bankBillSettleManagerImpl.getBank1(31);
         return flow.toString();
    }
 
+    @Override
     public String user2(){
         PageQuery pageQuery=new PageQuery(1,100);
         Map map=new HashMap();
@@ -35,6 +38,7 @@ public class GetBankFlowDemoServiceImpl implements GetBankFlowDemoService {
         return flow.toString();
     }
 
+    @Override
     public String transactionTest(){
         BankSettleBillFlow bankSettleBillFlow=new BankSettleBillFlow();
         bankSettleBillFlow.setId(31);
