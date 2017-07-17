@@ -5,16 +5,14 @@ import com.demo.common.PageQuery;
 import com.demo.common.RemoteResult;
 import com.demo.dao.BankSettleBillFlowMapper;
 import com.demo.domain.BankSettleBillFlow;
-import com.demo.manager.bankBillSettleManager;
+import com.demo.manager.BankBillSettleManager;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.ManagedBean;
 import java.util.Map;
 
 /**
  * Created by zhangxs7 on 2017/6/22.
  */
-@ManagedBean
 public class BankBillSettleManagerImpl implements BankBillSettleManager {
 
     @Autowired
