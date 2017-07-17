@@ -7,10 +7,10 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -18,7 +18,6 @@ import java.util.Properties;
 /**
 * Created by zhangxs7 on 2017/6/22.
 */
-@EnableTransactionManagement
 @Configuration
 public class DataBaseConfig {
     private final Logger logger = Logger.getLogger(DataBaseConfig.class);
@@ -31,7 +30,7 @@ public class DataBaseConfig {
      * @Primary 该注解表示在同一个接口有多个实现类可以注入的时候，默认选择哪一个，而不是让@autowire注解报错
      */
     @Bean
-    //@Primary
+    @Primary
     public DataSource dataSource() throws Exception{
         Properties props = new Properties();
         props.put("driverClassName", env.getProperty("spring.datasource.driverClassName"));
