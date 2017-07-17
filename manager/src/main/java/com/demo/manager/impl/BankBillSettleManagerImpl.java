@@ -15,7 +15,7 @@ import java.util.Map;
  * Created by zhangxs7 on 2017/6/22.
  */
 @ManagedBean
-public class bankBillSettleManagerImpl implements bankBillSettleManager {
+public class BankBillSettleManagerImpl implements BankBillSettleManager {
 
     @Autowired
     BankSettleBillFlowMapper bankSettleBillFlowMapper;
