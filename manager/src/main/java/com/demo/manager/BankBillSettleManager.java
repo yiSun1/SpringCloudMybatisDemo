@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Created by zhangxs7 on 2017/6/22.
  */
-public interface bankBillSettleManager {
+public interface BankBillSettleManager {
     public BankSettleBillFlow getBank1(Integer id);
     public PageModel<BankSettleBillFlow> getBank2(PageQuery pageQuery,Map map);
 
