@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * Created by zhangxs7 on 2017/6/22.
+ * Created by zhangxs7    on 2017/6/22.
  */
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.demo.dao","com.demo.domain","com.demo.manager","com.demo.service"})
