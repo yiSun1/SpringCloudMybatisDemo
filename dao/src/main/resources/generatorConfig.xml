@@ -14,7 +14,7 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/settle?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"
+                        connectionURL="jdbc:mysql://localhost:3306/account?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"
                         userId="root"
                         password="123456">
         </jdbcConnection>
@@ -26,17 +26,23 @@
         <javaModelGenerator targetPackage="com.demo.domain" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaModelGenerator>
-        <sqlMapGenerator targetPackage="sqlmaps" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="sqlmap2s" targetProject="src/main/resources">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.demo.dao" targetProject="src/main/java">
             <property name="enableSubPckages" value="true" />
         </javaClientGenerator>
 
-        <table tableName="bank_settle_bill_flow" domainObjectName="BankSettleBillFlow"
-               enableSelectByExample="false" enableDeleteByExample="false"
-               enableCountByExample="false" enableUpdateByExample="false" >
+        <!--<table tableName="bank_settle_bill_flow" domainObjectName="BankSettleBillFlow"-->
+               <!--enableSelectByExample="false" enableDeleteByExample="false"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false" >-->
+        <!--</table>-->
+
+        <table tableName="city" domainObjectName="City"
+            enableSelectByExample="false" enableDeleteByExample="false"
+            enableCountByExample="false" enableUpdateByExample="false" >
         </table>
+
     </context>
 
 </generatorConfiguration>
