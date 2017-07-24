@@ -5,11 +5,11 @@ spring:
     name: demoMybatis
   datasource:
       name: settle
-      url: jdbc:mysql://localhost:3306/settle?useOldAliasMetadataBehavior=true&rewriteBatchedStatements=true&createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8
+      url: jdbc:mysql://10.100.75.135:3306/settle?useOldAliasMetadataBehavior=true&rewriteBatchedStatements=true&createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8
       username: root
       password: 123456
-      # 使用druid数据源  com.alibaba.druid.pool.DruidDataSource
-      type: org.apache.commons.dbcp.BasicDataSource
+      # 使用druid数据源  com.alibaba.druid.pool.DruidDataSource org.apache.commons.dbcp.BasicDataSource
+      type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.jdbc.Driver
       maxActive: 400
       maxWait: 1000
