@@ -1,0 +1,24 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: demoMybatis
+  datasource:
+      name: settle
+      url: jdbc:mysql://localhost:3306/settle?useOldAliasMetadataBehavior=true&rewriteBatchedStatements=true&createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: 123456
+      # 使用druid数据源  com.alibaba.druid.pool.DruidDataSource
+      type: org.apache.commons.dbcp.BasicDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      maxActive: 400
+      maxWait: 1000
+      poolPreparedStatements: true
+      defaultAutoCommit: true
+
+mybatis:
+  mapperLocations: classpath*:sqlmaps/*Mapper.xml
+  typeAliasesPackage: com.demo.domain
+  configLocation: classpath:mybatisConfig.xml
+
+
