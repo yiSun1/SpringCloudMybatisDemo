@@ -64,10 +64,7 @@ public class PageQuery extends BaseObject {
         if (pageNum < 1) {
             pageNum = 1;//恢复到第一页
         }
-        if (pageNum > totalPageNum) {
-            pageNum = totalPageNum; //最大页
-            calculateStartAndEndRow();
-        }
+        calculateStartAndEndRow();
     }
 
     /**
